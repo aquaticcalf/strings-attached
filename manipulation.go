@@ -22,4 +22,11 @@ func Is_palindrome(s string) bool {
 	}
 	clean_string := cleaned.String()
 	return clean_string == Reverse(clean_string)
-}
+} // gives out a boolean, true if palindrome
+
+func Truncate(s string, max_length int) string {
+	if len(s) <= max_length {
+		return s
+	}
+	return s[:max_length - 3] + "..."
+} // cuts a string to a specified length and adds ellipsis ( if necessary )

@@ -2,28 +2,35 @@ package main
 
 import (
 	"fmt"
-	"github.com/aquaticcalf/strings-attached"
+	sa "github.com/aquaticcalf/strings-attached"
 )
 
 func test_reverse() {
 	fmt.Println("-------------")
 	fmt.Println("testing Reverse...")
-	fmt.Println("\"hello\" -> \"olleh\" :",stringsattached.Reverse("hello") == "olleh")
-	fmt.Println("\"\" -> \"\" :",stringsattached.Reverse("") == "")
-	fmt.Println("\"racecar\" -> \"racecar\" :",stringsattached.Reverse("racecar") == "racecar")
+	fmt.Println("\"hello\" -> \"olleh\" :",sa.Reverse("hello") == "olleh")
+	fmt.Println("\"\" -> \"\" :",sa.Reverse("") == "")
+	fmt.Println("\"racecar\" -> \"racecar\" :",sa.Reverse("racecar") == "racecar")
 }
 
 func test_is_palindrome() {
 	fmt.Println("-------------")
 	fmt.Println("testing Is_palindrome...")
-	fmt.Println("\"A man, a plan, a canal, Panama\" -> palindrome :",stringsattached.Is_palindrome("A man, a plan, a canal, Panama") == true)
-	fmt.Println("\"hello\" -> not a palindrome :",stringsattached.Is_palindrome("hello") == false)
-	fmt.Println("\"\" -> palindrome :",stringsattached.Is_palindrome("") == true)
+	fmt.Println("\"A man, a plan, a canal, Panama\" -> palindrome :",sa.Is_palindrome("A man, a plan, a canal, Panama") == true)
+	fmt.Println("\"hello\" -> not a palindrome :",sa.Is_palindrome("hello") == false)
+	fmt.Println("\"\" -> palindrome :",sa.Is_palindrome("") == true)
+}
 
+func test_truncate() {
+	fmt.Println("-------------")
+	fmt.Println("testing Truncate...")
+	fmt.Println("\"hello world\" -> \"he...\" :",sa.Truncate("hello world", 5) == "he...")
+	fmt.Println("\"short\" -> \"short\" :",sa.Truncate("short", 10) == "short")
 }
 
 func main() {
 	fmt.Println("running tests")
 	test_reverse()
 	test_is_palindrome()
+	test_truncate()
 }
