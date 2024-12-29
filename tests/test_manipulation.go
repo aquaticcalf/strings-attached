@@ -28,9 +28,18 @@ func test_truncate() {
 	fmt.Println("\"short\" -> \"short\" :",sa.Truncate("short", 10) == "short")
 }
 
+func test_word_count() {
+	fmt.Println("-------------")
+	fmt.Println("testing Word_count...")
+	fmt.Println("\"hello world\" -> 2 :",sa.Word_count("hello world") == 2)
+	fmt.Println("\"  multiple   spaces  \" -> 2 :",sa.Word_count("  multiple   spaces  ") == 2)
+	fmt.Println("\"\" -> 0 :",sa.Word_count("") == 0)
+}
+
 func main() {
 	fmt.Println("running tests")
 	test_reverse()
 	test_is_palindrome()
 	test_truncate()
+	test_word_count()
 }

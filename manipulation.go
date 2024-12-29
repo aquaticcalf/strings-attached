@@ -30,3 +30,8 @@ func Truncate(s string, max_length int) string {
 	}
 	return s[:max_length - 3] + "..."
 } // cuts a string to a specified length and adds ellipsis ( if necessary )
+
+func Word_count(s string) int {
+	words := strings.Fields(strings.TrimSpace(s))
+	return len(words)
+} // counts the number of words in a string
